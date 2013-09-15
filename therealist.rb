@@ -13,16 +13,20 @@ ISSUE_DIR = DATA_DIR + "/" + issue
 Dir.mkdir(ISSUE_DIR) unless File.exists?(ISSUE_DIR)
 # this is just a place holder until I figure out how to make it automatic
 number = "01"
-pagina = page + "/" + number
+pagina1 = page + "/" + number + ".jpg"
+number = "02"
+pagina2 = page + "/" + number + ".jpg"
 
-while number.to_i < 36
-	
 
-open("#{pagina}.jpg") {|f|
+open(pagina1) {|f|
    File.open("#{ISSUE_DIR}/#{number}.jpg","wb") do |file|
      file.puts f.read
    end
 }
-number = number.to_i + 1
-end
 
+open(pagina2) {|f|
+   File.open("#{ISSUE_DIR}/#{number}.jpg","wb") do |file|
+     file.puts f.read
+   end
+}
+puts "done"
