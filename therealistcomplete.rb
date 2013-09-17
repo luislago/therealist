@@ -29,5 +29,17 @@ puts "Creating #{ISSUE_DIR} folder"
  end}
  
 end
+for number in 10..total_pages.to_i #to_i turns the number I set before from a string to an integer.
+pagina = page + number.to_s + ".jpg" #we don't need to add the "0" anymore, since all page number have two digits now.
+		puts "Downloading page #{number}"
+		open(pagina) {|f|
+   File.open("#{ISSUE_DIR}/#{number}.jpg","wb") do |file|
+     file.puts f.read
+end }
+
+
+  
+      
+	end
 end
 puts "done"
