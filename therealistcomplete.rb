@@ -20,7 +20,7 @@ pagina = page + "0" + number.to_s + ".jpg" # it defines a specific page of the m
 #the format of the first 9 pages of each issue is "00", so, when I'm converting it to string, I need to add a zero
 
 for issue in 1...9 do
-	
+
 
 		for number in 1...9 do # this loop downloads the first 9 issues of the magazine
 			puts "Downloading page #{number}"
@@ -33,7 +33,6 @@ page = BASE_realist_URL + "0" + issue.to_s + "/"
 pagina = page + "0" + number.to_s + ".jpg"
 ISSUE_DIR = DATA_DIR + "/" + issue.to_s
 Dir.mkdir(ISSUE_DIR) unless File.exists?(ISSUE_DIR) #creates folder to store the issue
-puts "Creating #{ISSUE_DIR} folder"
 end
 end
 puts "done"
