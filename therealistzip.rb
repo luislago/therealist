@@ -44,6 +44,7 @@ pagina = page + number.to_s + ".jpg" #we don't need to add the "0" anymore, sinc
 end }
 
 end
+puts "creating a .zip"
  zipfile_name = "/home/luis/therealist/" + issue + ".zip"
 Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
     Dir[File.join(ISSUE_DIR, '**', '**')].each do |file|
